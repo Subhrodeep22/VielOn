@@ -1,4 +1,4 @@
-package com.anonymous.VielOn
+package com.anonymous.VeilOn
 
 import android.app.Application
 import android.content.res.Configuration

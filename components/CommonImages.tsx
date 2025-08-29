@@ -10,7 +10,7 @@ export default function CommonImages() {
         style={styles.backgroundImage}
       />
       <SvgXml
-        xml={require('../assets/images/VielOn.svg')}
+        xml={require('../assets/images/VeilOn.svg')}
         style={styles.logo}
       />
       <SvgXml

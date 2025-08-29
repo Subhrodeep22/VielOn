@@ -12,7 +12,7 @@ export default function ActivityTab() {
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.appName}>VielOn</Text>
+        <Text style={styles.appName}>VeilOn</Text>
         <HeaderIcons />
       </View>
       

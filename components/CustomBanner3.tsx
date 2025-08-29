@@ -24,7 +24,14 @@ export default function CustomBanner3({
   onPress 
 }: CustomBanner3Props) {
   return (
-    <Pressable style={styles.banner} onPress={onPress}>
+    <Pressable 
+      style={({ pressed }) => [
+        styles.banner,
+        pressed && styles.bannerPressed
+      ]} 
+      onPress={onPress}
+      android_ripple={{ color: 'rgba(255, 255, 255, 0.1)' }}
+    >
       <View style={styles.iconContainer}>
         <Image 
           source={icon} 
@@ -70,10 +77,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: screenHeight * 0.01,
   },
+  bannerPressed: {
+    opacity: 0.8,
+    transform: [{ scale: 0.98 }],
+  },
   iconContainer: {
     width: Math.max(56, screenWidth * 0.14),
     height: Math.max(56, screenWidth * 0.14),
-    borderRadius: Math.max(28, screenWidth * 0.07),
+    borderRadius: Math.max(20, screenWidth * 0.05),
     backgroundColor: '#D9D9D952',
     alignItems: 'center',
     justifyContent: 'center',
@@ -130,8 +141,6 @@ const styles = StyleSheet.create({
   rightIconContainer: {
     width: Math.max(40, screenWidth * 0.1),
     height: Math.max(40, screenWidth * 0.1),
-    borderRadius: Math.max(20, screenWidth * 0.025),
-    backgroundColor: '#D9D9D952',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -57,7 +57,7 @@ export default function HomeScreen() {
       
              {/* Header */}
        <View style={styles.header}>
-         <Text style={styles.appName}>VielOn</Text>
+         <Text style={styles.appName}>VeilOn</Text>
          <HeaderIcons 
            onSearchPress={() => console.log('Search pressed')}
            onBellPress={() => console.log('Bell pressed')}

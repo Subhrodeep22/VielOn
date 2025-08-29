@@ -49,7 +49,7 @@ export default function OnboardingBrand() {
           contentFit="contain"
         />
         <Image
-          source={require('../../assets/images/VielOn.svg')}
+          source={require('../../assets/images/VeilOn.svg')}
           style={styles.brandText}
           contentFit="contain"
         />

@@ -16,7 +16,7 @@ export default function DAppsTab() {
       
             {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.appName}>VielOn</Text>
+        <Text style={styles.appName}>VeilOn</Text>
         <HeaderIcons 
           onSearchPress={() => console.log('Search pressed')}
           onBellPress={() => console.log('Bell pressed')}
@@ -29,9 +29,9 @@ export default function DAppsTab() {
       {/* Custom Banners */}
       <CustomBanner
         icon={require('../../assets/images/card-wallet.svg')}
-        title="VielOn DEX"
-        actionText="Private and public Swaps"
-        onActionPress={() => router.push('../vielon-dex')}
+        title="VeilOn DEX"
+        actionText="Trade tokens with privacy"
+        onActionPress={() => router.push('../veilon-dex')}
       />
       
       <CustomBanner

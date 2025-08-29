@@ -1,4 +1,4 @@
-package com.anonymous.VielOn
+package com.anonymous.VeilOn
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

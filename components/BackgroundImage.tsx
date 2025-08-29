@@ -21,9 +21,9 @@ export default function BackgroundImage({ height = '100%' }: BackgroundImageProp
 const styles = StyleSheet.create({
   backgroundImage: {
     position: 'absolute',
-    top: -100,
-    left: 0,
-    right: 0,
+    top: 0,
+    left: -50,
+    right: -50,
     bottom: 0,
     zIndex: -100,
   },

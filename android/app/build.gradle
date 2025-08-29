@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.VielOn'
+    namespace 'com.anonymous.VeilOn'
     defaultConfig {
-        applicationId 'com.anonymous.VielOn'
+        applicationId 'com.anonymous.VeilOn'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -173,5 +173,13 @@ dependencies {
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
+    }
+    
+    // Force resolution of React Native libraries
+    configurations.all {
+        resolutionStrategy {
+            force 'com.facebook.react:react-android'
+            force 'com.facebook.react:hermes-android'
+        }
     }
 }

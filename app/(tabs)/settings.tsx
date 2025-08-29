@@ -2,8 +2,11 @@ import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+import AddressBook from '../../components/AddressBook';
 import BlackBanner from '../../components/BlackBanner';
 import HeaderIcons from '../../components/HeaderIcons';
+import NetworksRPCs from '../../components/NetworksRPCs';
+import PendingBalances from '../../components/PendingBalances';
 import WalletPage from '../../components/WalletPage';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
@@ -12,6 +15,9 @@ export default function SettingsTab() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const [showWalletOverlay, setShowWalletOverlay] = useState(false);
+  const [showPendingBalances, setShowPendingBalances] = useState(false);
+  const [showAddressBook, setShowAddressBook] = useState(false);
+  const [showNetworksRPCs, setShowNetworksRPCs] = useState(false);
   
   return (
     <SafeAreaView style={styles.container}>
@@ -20,7 +26,7 @@ export default function SettingsTab() {
       
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.appName}>VielOn</Text>
+        <Text style={styles.appName}>VeilOn</Text>
         <HeaderIcons />
       </View>
       
@@ -54,7 +60,7 @@ export default function SettingsTab() {
           header="Wallets"
           subtitle="Manage your available wallets"
           icon={require('../../assets/images/_.svg')}
-          onPress={() => setShowWalletOverlay(!showWalletOverlay)}
+          onPress={() => setShowWalletOverlay(true)}
         />
         
 
@@ -63,18 +69,21 @@ export default function SettingsTab() {
           header="Pending balances"
           subtitle="View pending shields and other balances"
           icon={require('../../assets/images/_.svg')}
+          onPress={() => setShowPendingBalances(true)}
         />
         
         <BlackBanner
           header="Networks & RPCs"
           subtitle="Customize network RPCs"
           icon={require('../../assets/images/_.svg')}
+          onPress={() => setShowNetworksRPCs(true)}
         />
         
         <BlackBanner
           header="Address Book"
           subtitle="Manage saved addresses"
           icon={require('../../assets/images/_.svg')}
+          onPress={() => setShowAddressBook(true)}
         />
         
         <BlackBanner
@@ -127,6 +136,21 @@ export default function SettingsTab() {
       {showWalletOverlay && (
         <WalletPage onBack={() => setShowWalletOverlay(false)} />
       )}
+      
+      {/* Pending Balances - Slides in on top of settings */}
+      {showPendingBalances && (
+        <PendingBalances onBack={() => setShowPendingBalances(false)} />
+      )}
+      
+      {/* Address Book - Slides in on top of settings */}
+      {showAddressBook && (
+        <AddressBook onBack={() => setShowAddressBook(false)} />
+      )}
+      
+      {/* Networks & RPCs - Slides in on top of settings */}
+      {showNetworksRPCs && (
+        <NetworksRPCs onBack={() => setShowNetworksRPCs(false)} />
+      )}
     </SafeAreaView>
   );
 }
@@ -135,6 +159,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5F5F5',
+    zIndex: 1,
   },
   header: {
     flexDirection: 'row',

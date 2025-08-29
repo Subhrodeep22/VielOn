@@ -42,7 +42,7 @@ export default function LinkWallet() {
       
       <View style={styles.contentContainer}>
         <View style={styles.topSection}>
-          <Text style={styles.brandName}>VielOn</Text>
+          <Text style={styles.brandName}>VeilOn</Text>
         </View>
         
         <View style={styles.middleSection}>

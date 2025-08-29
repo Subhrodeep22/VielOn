@@ -7,7 +7,7 @@ import BackgroundImage from '../components/BackgroundImage';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
-export default function VielOnDEXScreen() {
+export default function VeilOnDEXScreen() {
   const router = useRouter();
   const [selectedToken, setSelectedToken] = useState("WETH");
 
@@ -36,8 +36,8 @@ export default function VielOnDEXScreen() {
         {/* Header Area */}
         <View style={styles.header}>
           <View style={styles.titleSection}>
-            <Text style={styles.appName}>VielOn DEX</Text>
-            <Text style={styles.boldAppName}>VielOn DEX</Text>
+            <Text style={styles.appName}>VeilOn DEX</Text>
+            <Text style={styles.boldAppName}>VeilOn DEX</Text>
             <Text style={styles.subtitle}>Private and public DEX aggregator</Text>
           </View>
           <Pressable style={styles.privateButton}>
